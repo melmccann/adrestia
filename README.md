@@ -1,6 +1,6 @@
 # Overview
 
-Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: low-level libraries or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
+Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
 # Getting Started
 
@@ -19,16 +19,36 @@ name / link       | description                                    | Byron      
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
-## Libraries
+## CLIs
 
-Name / Link                 | Description                                                              | Haskell            | JavaScript
----                         | ---                                                                      | ---                | ---
-[bech32]                    | Human-friendly Bech32 address encoding                                   | :heavy_check_mark: | [bitcoinjs/bech32](https://github.com/bitcoinjs/bech32)
-[cardano-addresses]         | Addresses and mnemonic manipulation & derivations                        | :heavy_check_mark: | :construction:
-[cardano-coin-selection]    | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
-[cardano-launcher]          | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | :x:                | :heavy_check_mark:
-[cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
-[cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
+Name / Link            | Description                                          | Byron              | Jörmungandr        | Shelley
+---                    | ---                                                  | ---                | ---                | ---
+[bech32]               | Human-friendly Bech32 address encoding               | N/A                | :heavy_check_mark: | :heavy_check_mark:
+[cardano-wallet]       | Command-line for interacting with cardano-wallet API | :heavy_check_mark: | :heavy_check_mark: | :construction:
+[cardano-addresses]    | Addresses and mnemonic manipulation & derivations    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+[cardano-transactions] | Transaction construction and signing                 | :heavy_check_mark: | :x:                | :construction:
+
+## Haskell SDKs 
+
+Name / Link              | Description                                       | Byron              | Jörmungandr        | Shelley
+---                      | ---                                               | ---                | ---                | ---
+[bech32]                 | Human-friendly Bech32 address encoding            | N/A                | :heavy_check_mark: | :heavy_check_mark:
+[cardano-addresses]      | Addresses and mnemonic manipulation & derivations | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+[cardano-coin-selection] | Coin selection and fee balancing algorithms       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+[cardano-transactions]   | Transaction construction and signing              | :heavy_check_mark: | :x:                | :construction:
+
+## Rust SDKs (+WebAssembly support)
+
+Name / Link                    | Description                                           | Byron | Jörmungandr | Shelley
+---                            | ---                                                   | ---   | ---         | ---
+[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | :construction:
+[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | N/A   | N/A         | :construction:
+
+## JavaScript SDKs
+
+Name / Link        | Description                                              | Byron              | Jörmungandr        | Shelley
+---                | ---                                                      | ---                | ---                | ---
+[cardano-launcher] | node and cardano-wallet launcher for NodeJS applications | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 
 ## Formal Specifications 
 
@@ -55,6 +75,7 @@ name / link        | description
 [cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
 [cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib 
+[react-native-haskell-shelley]: https://github.com/Emurgo/react-native-haskell-shelley
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
